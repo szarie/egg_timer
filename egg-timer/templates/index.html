@@ -1,21 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/egg-timer/static/css/styles.css">
     <title>Egg Timer</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Egg Timer</h1>
-        <div class="timer">
-            <input type="number" id="minutes" placeholder="Minutes" min="0">
-            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
-            <button id="start-timer">Start Timer</button>
-            <div id="countdown-display"></div>
+      
+    <div class="header">
+        <img src="/egg-timer/static/images/egg.jpg" alt="Egg Timer Logo" class="logo">
+        <div class="title">
+            <h1>Egg Timer</h1>
         </div>
     </div>
+        
+    <div class="parent">
+        <div class="div1">
+            <button onclick=myFunction() style="border: none; background-color: transparent; cursor: pointer;">
+                <img src="/egg-timer/static/images/egg.jpg" alt="Button Image" width="100" height="50">
+              </button>
+                <div class="eggtext">
+                    <p>Soft-boiled</p>
+                    <p>6 minutes</p>
+                </div>
+        </div>
+        <div class="div2">
+            <div class="div1">
+                <button onclick=myFunction() style="border: none; background-color: transparent; cursor: pointer;">
+                    <img src="/egg-timer/static/images/egg.jpg" alt="Button Image" width="100" height="50">
+                  </button>
+                    <div class="eggtext">
+                        <p>Firm yolk-boiled</p>
+                        <p>8 minutes</p>
+                    </div>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="div1">
+                <button onclick=myFunction() style="border: none; background-color: transparent; cursor: pointer;">
+                    <img src="/egg-timer/static/images/egg.jpg" alt="Button Image" width="100" height="50">
+                  </button>
+                    <div class="eggtext">
+                        <p>Fully hard-boiled</p>
+                        <p>10 minutes</p>
+                    </div>
+            </div>
+        </div>
+        <div class="div4">
+            <input type="number" id="input4" placeholder="Custom time" min="0">
+        </div>
+        <div class='button'>
+            <button id="startButton" onclick="startTimer()">Start</button>
+    </div>
+    
+    <script src="/egg-timer/static/js/script.js"></script>
     <script src="/static/js/timer.js"></script>
 </body>
 </html>

@@ -1,59 +1,72 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+    color: red;
+}
+
+.logo {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.div1,
+.div2,
+.div3,
+.div4 {
+    display: flex;
+    flex-direction: column;
+    align-items: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+.eggtext {
+    font-size: 1rem;
+    margin-top: 5px;
+    text-align: center;
+    color: #333;
+}
+
+.eggtext p {
     margin: 0;
     padding: 0;
-}
-
-.container {
-    width: 50%;
-    margin: auto;
-    overflow: hidden;
-}
-
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-.timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.timer input {
-    width: 60px;
-    text-align: center;
-    font-size: 2em;
-}
-
-.timer button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.timer-display {
-    font-size: 3em;
-    text-align: center;
-    margin: 20px 0;
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    line-height: 1.2;
 }
