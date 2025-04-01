@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const startButton = document.getElementById("start-button");
+document.addEventListener("DOMContentLoaded", function () {
+    const startButton = document.getElementById("startButton");
     const resetButton = document.getElementById("reset-button");
     const timerDisplay = document.getElementById("timer-display");
     let timer;
     let timeLeft;
 
-    startButton.addEventListener("click", function() {
+    startButton.addEventListener("click", function () {
         const inputTime = document.getElementById("time-input").value;
         timeLeft = parseInt(inputTime) * 60; // Convert minutes to seconds
         if (isNaN(timeLeft) || timeLeft <= 0) {
@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
         startTimer();
     });
 
-    resetButton.addEventListener("click", function() {
+    resetButton.addEventListener("click", function () {
         resetTimer();
     });
 
     function startTimer() {
         timerDisplay.textContent = formatTime(timeLeft);
-        timer = setInterval(function() {
+        timer = setInterval(function () {
             if (timeLeft <= 0) {
                 clearInterval(timer);
                 alert("Time's up!");

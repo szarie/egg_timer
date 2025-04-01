@@ -13,13 +13,14 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-.title {
-    font-size: 2rem;
+.title h1 {
+    font-size: 1.5rem;
     text-align: center;
-    color: red;
+    margin: 0;
+    color: var(--header-color);
 }
 
 .logo {
@@ -34,7 +35,12 @@ body {
     gap: 20px;
     width: 80%;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: var(--container-bg);
+    border: 1px solid var(--container-border);
+    box-shadow: 0 4px 12px var(--container-shadow);
 }
 
 .div1,
@@ -45,7 +51,36 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+.div1:hover,
+.div2:hover,
+.div3:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    z-index: 10;
+}
+
+
+.div1:hover img,
+.div2:hover img,
+.div3:hover img,
+.div4:hover img,
+.div1:hover .eggtext,
+.div2:hover .eggtext,
+.div3:hover .eggtext {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+button {
+    cursor: pointer;
 }
 
 input {
@@ -62,7 +97,7 @@ input {
     font-size: 1rem;
     margin-top: 5px;
     text-align: center;
-    color: #333;
+    color: var(--text-color);
 }
 
 .eggtext p {
@@ -72,19 +107,76 @@ input {
 }
 
 
+.timer-display {
+    font-size: 4rem;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.cancel-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button:hover,
+.return-button:hover {
+    opacity: 0.9;
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+#startButton:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.egg-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .parent {
+        width: 95%;
+    }
+
+    .div1,
+    .div2,
+    .div3,
+    .div4 {
+        width: 80%;
+    }
+}
+
 
 /* From Uiverse.io by RiccardoRapelli */
 .switch {
-    position: absolute;
-    /* Change from relative to absolute */
-    top: 50px;
+    position: relative;
+    /* top: 50px; */
     /* Position from the top */
-    right: 200px;
+    /* right: 200px; */
     /* Position from the right */
-    display: inline-block;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 15px;
     width: 60px;
     height: 34px;
-    z-index: 100;
+    /* z-index: 100; */
     /* Ensure it appears above other elements */
 }
 
@@ -118,6 +210,7 @@ input {
     background-color: yellow;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+
 }
 
 #input:checked+.slider {
@@ -217,7 +310,7 @@ input {
 
 .cloud-light {
     position: absolute;
-    fill: #eee;
+    fill: var(--cloud-light-color, #eee);
     animation-name: cloud-move;
     animation-duration: 6s;
     animation-iteration-count: infinite;
@@ -225,7 +318,7 @@ input {
 
 .cloud-dark {
     position: absolute;
-    fill: #ccc;
+    fill: var(--cloud-dark-color) #ccc;
     animation-name: cloud-move;
     animation-duration: 6s;
     animation-iteration-count: infinite;
@@ -360,20 +453,37 @@ input {
     /* Light theme colors */
     --bg-color: #ffffff;
     --text-color: #333333;
-    --header-color: #ff0000;
+    --header-color: #0f0a0a;
     --input-border: #cccccc;
     --button-bg: #2196f3;
     --button-text: white;
+    --cloud-light-color: #eee;
+    --cloud-dark-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --container-bg: rgba(255, 255, 255, 0.7);
+    --container-border: #e0e0e0;
+    --container-shadow: rgba(0, 0, 0, 0.1);
 }
 
 body.dark-theme {
     /* Dark theme colors */
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --header-color: #ff6b6b;
+    --header-color: #fffdfd;
     --input-border: #555555;
     --button-bg: #3a3a3a;
     --button-text: #e0e0e0;
+    --cloud-light-color: #555;
+    --cloud-dark-color: #777;
+    --shadow-color: rgba(255, 255, 255, 0.15);
+    --container-bg: rgba(30, 30, 30, 0.7);
+    --container-border: #444444;
+    --container-shadow: rgba(0, 0, 0, 0.3);
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
 }
 
 body {
