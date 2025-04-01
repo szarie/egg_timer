@@ -1,5 +1,0 @@
-FastAPI
-uvicorn
-pydantic
-aiofiles
-jinja2
