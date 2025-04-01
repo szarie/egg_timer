@@ -149,6 +149,33 @@ input {
     cursor: pointer;
 }
 
+.music-section {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    max-width: 30%;
+    margin: 0;
+    text-align: left;
+    z-index: 100;
+}
+
+.spotify-player {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .music-section {
+        width: 200px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    iframe {
+        height: 150px;
+    }
+}
 
 @media (max-width: 768px) {
     .parent {
@@ -318,7 +345,7 @@ input {
 
 .cloud-dark {
     position: absolute;
-    fill: var(--cloud-dark-color) #ccc;
+    fill: var(--cloud-dark-color, #ccc);
     animation-name: cloud-move;
     animation-duration: 6s;
     animation-iteration-count: infinite;
