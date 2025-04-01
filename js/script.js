@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function startTimer(seconds) {
                 // Save original content
-                //const originalContent = mainContent.innerHTML;
+                const originalContent = mainContent.innerHTML;
                 const elementsToHide = Array.from(mainContent.children);
                 const timerContainer = document.createElement('div');
                 timerContainer.className = 'timer-container';
@@ -103,18 +103,28 @@ document.addEventListener('DOMContentLoaded', function () {
                         clearInterval(timerInterval);
                         timerDisplay.textContent = 'Done!';
 
+                        //Add notification sound
+                        const audio = new Audio('images/timer-done.mp3');
+                        audio.play().catch(e => console.log('Audio play failed:', e));
+
+                        cancelButton.remove();
+
                         // Add a return button
                         const returnButton = document.createElement('button');
                         returnButton.textContent = 'Return';
                         returnButton.className = 'return-button';
                         returnButton.addEventListener('click', () => {
-                            mainContent.innerHTML = originalContent;
+                            //mainContent.innerHTML = originalContent;
+                            if (audio && !audio.paused) {
+                                audio.pause();
+                                audio.currentTime = 0; // Reset to start
+                            }
+                            elementsToHide.forEach(elem => elem.style.display = '');
+                            timerContainer.remove();
                         });
-                        mainContent.appendChild(returnButton);
+                        //mainContent.appendChild(returnButton);
 
-                        // Optional: Add notification sound
-                        const audio = new Audio('/egg-timer/static/sounds/timer-done.mp3');
-                        audio.play().catch(e => console.log('Audio play failed:', e));
+                        timerContainer.appendChild(returnButton);
 
                         return;
                     }
@@ -128,6 +138,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Handle cancel button
                 cancelButton.addEventListener('click', () => {
                     clearInterval(timerInterval);
+
+                    const activeAudio = document.querySelector('audio');
+                    if (activeAudio) {
+                        activeAudio.pause();
+                        activeAudio.currentTime = 0; // Reset to start
+                    }
                     elementsToHide.forEach(elem => elem.style.display = '');
                     //mainContent.innerHTML = originalContent;
                     timerContainer.remove();
