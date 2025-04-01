@@ -135,6 +135,7 @@ input {
     border-radius: 5px;
     border: none;
     margin-top: 10px;
+    background-color: var(--button-bg);
 }
 
 #startButton:hover {
