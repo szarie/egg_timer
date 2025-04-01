@@ -1,7 +1,7 @@
 # Egg Timer Project
 
 ## Overview
-The Egg Timer project is a web application built using FastAPI that allows users to set timers for cooking eggs. The application provides a simple and intuitive interface for users to interact with the timer functionality.
+The Egg Timer cause im bored also i dunno how to design
 
 
 ## Contributing
